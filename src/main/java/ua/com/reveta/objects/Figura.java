@@ -1,6 +1,10 @@
 package ua.com.reveta.objects;
 
-public class Figura {
+
+/**
+ * Об'єкт який існує на клітинці таблиці
+ * */
+public final class Figura {
 
     private  Figura.Status status;
 
@@ -19,7 +23,9 @@ public class Figura {
     }
 
     /** Приймаючи статус метод повертає
-     *  його Graficx копію у StringBuilding об'єкті*/
+     *  його Graficx копію у StringBuilding об'єкті
+     * @param status приймає enum Figura.Status
+     * @return StringBuilder з графічним відображенням фігури(по статусу)*/
     public static StringBuilder getGraficxSym(Figura.Status status){
         switch (status){
 
@@ -34,7 +40,7 @@ public class Figura {
         return null;
     }
 
-    /** Повертає пусту клітинку для створення статової карти*/
+    /** @return пусту клітинку для створення статової карти*/
     static Figura getDefaultValue(){
         return new Figura(Status.EMPTY);
     }
